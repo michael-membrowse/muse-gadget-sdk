@@ -1,0 +1,642 @@
+[
+  {
+    "target_name": "esp32c5-devkit",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32c5",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32c5 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-echoear-2st",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-ostb-echoear-2st\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32c6-c6-nopsram",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32c6",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32c6 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.c6-nopsram\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32c6-waveshare-c6-lcd-147",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32c6",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32c6 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.waveshare-c6-lcd-147\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32c3-c3-oled-042",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32c3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32c3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.c3-oled-042\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32-ideaspark",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.ideaspark\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32-esp32-2432s028",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.esp32-2432s028\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-sensecap-indicator",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.sensecap-indicator\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-reterminal-e1001",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.reterminal-e1001\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-reterminal-e1002",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.reterminal-e1002\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-reterminal-sticky",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.reterminal-sticky\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-reterminal-sticky-link",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.reterminal-sticky-link\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-waveshare-s3-epaper-154g",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.waveshare-s3-epaper-154g\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-waveshare-s3-lcd-35",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.waveshare-s3-lcd-35\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-home-assistant-voice",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.home-assistant-voice\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-espressif-s3-devkitc-1",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.espressif-s3-devkitc-1\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-seeed-respeaker-lite",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.seeed-respeaker-lite\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-seeed-respeaker-xvf3800",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.seeed-respeaker-xvf3800\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-175c",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-175c\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-175",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-175\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-175c-video",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-175c;devices/sdkconfig.muse-video\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-185b",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-185b\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-185c",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-185c\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-143",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-143\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-lilygo-s3-amoled-175",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-lilygo-s3-amoled-175\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-146",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-146\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-lcd7",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-lcd7\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-lcd128",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-lcd128\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-lcd349",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-lcd349\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-spotpear-esp32-ai-128",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-spotpear-esp32-ai-128\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-216",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-216\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-206",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-206\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-143c",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-143c\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32p4-muse-waveshare-p4-lcd35",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32p4",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32p4 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-p4-lcd35\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32p4-muse-waveshare-p4-lcd35-camera",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32p4",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32p4 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-p4-lcd35;devices/sdkconfig.muse-waveshare-p4-lcd35-camera\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-aipi-voice-note-toggle",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-aipi;devices/sdkconfig.muse-voice-note-toggle\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-aipi",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-aipi\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-atk-dnesp32s3-box",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-atk-dnesp32s3-box\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-atk-dnesp32s3-box2",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-atk-dnesp32s3-box2\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32c6-muse-waveshare-c6-18",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32c6",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32c6 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-c6-18\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-18",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-18\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32c6-muse-waveshare-c6-206",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32c6",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32c6 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-c6-206\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-sensecap-watcher",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-sensecap-watcher\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-watcher-power-test",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-sensecap-watcher;devices/sdkconfig.muse-watcher-power-test\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-m5stack-cardputer-adv",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-m5stack-cardputer-adv\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-espressif-box-3",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-espressif-box-3\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-m5stack-sticks3",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-m5stack-sticks3\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-crowpanel-advance-43",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-crowpanel-advance-43\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-m5stack-stopwatch",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-m5stack-stopwatch\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-m5stack-stopwatch-video",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-m5stack-stopwatch;devices/sdkconfig.muse-video\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-m5stack-stopwatch-apps",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-m5stack-stopwatch;devices/sdkconfig.muse-apps\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-seeed-xiao-s3-147",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-seeed-xiao-s3-147\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-m5stack-cores3",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-m5stack-cores3\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-guition-jc3248w535",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-guition-jc3248w535\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32-muse-m5stack-stickc-plus2",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-m5stack-stickc-plus2\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32-muse-m5stack-core2",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-m5stack-core2\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-fnk0104b",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-fnk0104b\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-vn-s3-183",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-vn-s3-183\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32c3-muse-ai-passport",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32c3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32c3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-ai-passport\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-deotaland-rorolee",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-deotaland-rorolee\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-viewe-smartring-plus",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-viewe-smartring-plus\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-lcd19",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-lcd19\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-waveshare-s3-lcd-35",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-lcd-35\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  },
+  {
+    "target_name": "esp32s3-muse-dfrobot-unihiker-k10",
+    "setup_cmd": "sudo rm -rf /usr/local/lib/android && git clone --depth 1 -b v6.0.3 --recursive --shallow-submodules https://github.com/espressif/esp-idf.git \"$HOME/esp/esp-idf\" && \"$HOME/esp/esp-idf/install.sh\" esp32s3",
+    "build_cmd": "export IDF_PATH=\"$HOME/esp/esp-idf\" IDF_PATH_FORCE=1 && cd esp32 && . \"$IDF_PATH/export.sh\" > /dev/null && idf.py -B build -DIDF_TARGET=esp32s3 -DSDKCONFIG=build/sdkconfig \"-DSDKCONFIG_DEFAULTS=sdkconfig.defaults;devices/sdkconfig.muse;devices/sdkconfig.muse-dfrobot-unihiker-k10\" build",
+    "elf": "esp32/build/muse-gadget.elf",
+    "ld": "esp32/build/esp-idf/esp_system/ld/memory.ld esp32/build/esp-idf/esp_system/ld/sections.ld",
+    "map_file": "esp32/build/muse-gadget.map",
+    "linker_vars": "",
+    "skip_sections": ""
+  }
+]

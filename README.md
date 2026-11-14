@@ -16,6 +16,8 @@ limitations under the License.
 
 # Muse Gadgets
 
+[![MemBrowse](https://membrowse.com/badge.svg)](https://membrowse.com/public/facebookincubator/muse-gadget-sdk)
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/images/muse-gadgets-dark.png">
