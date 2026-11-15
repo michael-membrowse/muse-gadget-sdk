@@ -43,6 +43,11 @@ CONFIG_SPIRAM_ALLOW_BSS_SEG_EXTERNAL_MEMORY=y
 # That forces Wi-Fi's TX buffers static, in internal RAM: 8, not 16, at 1.6 KB
 # each, which voice over the tunnel doesn't fill.
 CONFIG_ESP_WIFI_STATIC_TX_BUFFER_NUM=8
+# Once Wi-Fi, BLE and the tunnel are up, no 8 KB internal block is left, so
+# setup task stacks go to PSRAM: without it Muse's VM lookup task can't start
+# and chat fails with "Can't reach Muse's server". Safe with code and
+# read-only data in PSRAM, which keep the cache on during NVS writes.
+CONFIG_HOMEHUB_SETUP_TASKS_IN_PSRAM=y
 
 # Screen off on battery: the CPU drops to the crystal clock and light-sleeps
 # between button polls (muse_input.c). BLE has to allow that with modem sleep;
